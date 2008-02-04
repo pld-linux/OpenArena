@@ -19,8 +19,8 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %define		_noautoreqdep	libGL.so.1 libGLU.so.1
 
 %ifarch %{x8664}
-# we provides *()(64bit) symbols, so skip harcoded reqs.
-%define		_noautoreqdep	libSDL-1.2.so.0 libogg.so.0 libopenal.so.0 libvorbis.so.0 libvorbisfile.so.3
+# we provide *()(64bit) symbols, so skip hardcoded reqs.
+%define		_noautoreqdep	libGL.so.1 libGLU.so.1 libSDL-1.2.so.0 libogg.so.0 libopenal.so.0 libvorbis.so.0 libvorbisfile.so.3
 %endif
 
 %description
@@ -30,11 +30,9 @@ OpenArena for Linux.
 %define __unzip %{_bindir}/unzip -o
 %setup -q -n openarena-%{_base_ver} -b1
 
-%build
-cat << EOF > ioquake3
+cat << 'EOF' > ioquake3
 #/bin/sh
-
-/opt/OpenArena/ioquake3
+exec /opt/OpenArena/ioquake3
 EOF
 
 %install
