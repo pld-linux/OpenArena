@@ -7,7 +7,7 @@ Release:	0.1
 License:	GPL v2
 Group:		Applications/Games
 Source0:	http://download.tuxfamily.org/openarena/rel/%(echo %{_base_ver} | tr -d .)/oa%(echo %{_base_ver} | tr -d .).zip
-# Source0-md5:	d41d8cd98f00b204e9800998ecf8427e
+# Source0-md5:	61aaba81973900d5116a6842079c9c49
 URL:		http://openarena.ws/
 BuildRequires:	unzip
 Requires:	OpenGL
