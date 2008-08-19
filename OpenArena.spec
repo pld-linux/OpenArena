@@ -6,11 +6,8 @@ Version:	%{_base_ver}
 Release:	0.1
 License:	GPL v2
 Group:		Applications/Games
-# precompiled archives can be downloaded from website.
-Source0:	http://download.tuxfamily.org/openarena/rel/%(echo %{_base_ver} | sed -e 's:\.::g')/oa%(echo %{_base_ver} | sed -e 's:\.::g').zip
-# Source0-md5:	61aaba81973900d5116a6842079c9c49
-#Source1:	oa%(echo %{_patch_ver} | sed -e 's:\.::g')-patch.zip
-# Source1-md5:	5fa31998009f8241ad3ded93eb81e701
+Source0:	http://download.tuxfamily.org/openarena/rel/%(echo %{_base_ver} | tr -d .)/oa%(echo %{_base_ver} | tr -d .).zip
+# Source0-md5:	d41d8cd98f00b204e9800998ecf8427e
 URL:		http://openarena.ws/
 BuildRequires:	unzip
 Requires:	OpenGL
@@ -29,7 +26,6 @@ OpenArena for Linux.
 %prep
 %define __unzip %{_bindir}/unzip -o
 %setup -q -n openarena-%{_base_ver}
-# -b1
 
 cat << 'EOF' > openarena
 #/bin/sh
