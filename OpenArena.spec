@@ -1,3 +1,6 @@
+# TODO:
+# - FHS
+# - build from sources; we can't distribute GPLed binaries alone anyway
 Summary:	OpenArena - a completely free game for the foss Quake III engine
 Summary(pl.UTF-8):	OpenArena - darmowa gra wykorzystująca silnik Quake III
 Name:		OpenArena
@@ -9,14 +12,9 @@ Source0:	http://download.tuxfamily.org/openarena/rel/%(echo %{version} | tr -d .
 # Source0-md5:	61aaba81973900d5116a6842079c9c49
 URL:		http://openarena.ws/
 BuildRequires:	unzip
+# applies to this binary distribution only
+BuildArch:	%{ix86} %{x8664}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-
-%define		_noautoreqdep	libGL.so.1 libGLU.so.1
-
-%ifarch %{x8664}
-# we provide *()(64bit) symbols, so skip hardcoded reqs.
-%define		_noautoreqdep	libGL.so.1 libGLU.so.1 libSDL-1.2.so.0 libogg.so.0 libopenal.so.0 libvorbis.so.0 libvorbisfile.so.3
-%endif
 
 %description
 OpenArena for Linux.
