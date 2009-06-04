@@ -4,16 +4,16 @@
 Summary:	OpenArena - a completely free game for the foss Quake III engine
 Summary(pl.UTF-8):	OpenArena - darmowa gra wykorzystująca silnik Quake III
 Name:		OpenArena
-Version:	0.8.0
+Version:	0.8.1
 Release:	0.1
 License:	GPL v2
 Group:		Applications/Games
 Source0:	http://download.tuxfamily.org/openarena/rel/%(echo %{version} | tr -d .)/oa%(echo %{version} | tr -d .).zip
-# Source0-md5:	61aaba81973900d5116a6842079c9c49
+# Source0-md5:	49006bcb02b4e8ea3d06749e8f4e4887
 URL:		http://openarena.ws/
 BuildRequires:	unzip
 # applies to this binary distribution only
-BuildArch:	%{ix86} %{x8664}
+ExclusiveArch:	%{ix86} %{x8664}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
